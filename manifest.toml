@@ -1,0 +1,36 @@
+# Defines version this resource uses
+#
+# cantankerous | In Development API
+manifest_version = "cantankerous"
+
+# Adds files of to the resource content system.
+# Any files will be synced to the client unless resource is marked as server only
+#
+# This directive supports globbing in the filename field.
+files = [
+    "resources/**/*.*"
+]
+
+# Defines a script to be loaded on both sides. The extension determines which script loader will handle the file.
+#
+# Extension | Loader     | Type                   | Side        | Environments
+# .js       | JavaScript | JavaScript source code | Both Sides  | All environments support
+# .py       | Python     | Python source code     | Both Sides  | All environments support
+# .lua      | Lua        | Lua source code        | Both Sides  | All environments support
+# .jar      | JVM        | Compiled JVM code      | Server Only | Not all environments support
+scripts = ["common.js"]
+
+# Requires the specified resource to load before the current resource.
+dependencies = ["chat"]
+
+[server]
+# Defines a script to be loaded on the server side. The extension determines which script loader will handle the file as described in scripts.
+scripts = ["server.js"]
+
+# Marks the resource as being server-only. This stops clients from downloading anything of this resource.
+# If all resources are marked as server-only the server will accept vanilla connections.
+server_only = false
+
+[client]
+# Defines a script to be loaded on the client side. The extension determines which script loader will handle the file as described in scripts.
+scripts = ["client.js"]

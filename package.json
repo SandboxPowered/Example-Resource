@@ -1,0 +1,10 @@
+{
+  "name": "example-resource",
+  "version": "0.1.0",
+  "description": "Example Resource for Sandbox2 API",
+  "repository": "https://github.com/SandboxPowered/Example-Resource",
+  "author": "SandboxPowered",
+  "devDependencies": {
+    "@sandboxpowered/api": "^0.1.2"
+  }
+}
